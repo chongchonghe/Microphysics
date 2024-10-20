@@ -186,7 +186,13 @@ int be_integrator (BurnT& state, BeT& be)
 
     be.n_rhs += 1;
 
-    amrex::Real dt_sub = initial_react_dt(state, be, ydot);
+    ierr = single_step(state, be, be.tout);
+    be.t += be.tout;
+    ++be.n_step;
+		return ierr;
+
+    // amrex::Real dt_sub = initial_react_dt(state, be, ydot);
+    amrex::Real dt_sub = be.tout;
 
     // main timestepping loop
 

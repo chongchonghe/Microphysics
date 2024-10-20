@@ -19,12 +19,12 @@ void actual_rhs (const burn_t& state, Array1D<Real, 1, neqs>& ydot)
 }
 
 
-template<class MatrixType>
-AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE
-void actual_jac (const burn_t& state, MatrixType& jac)
-{
-    // initialize
-    jac.zero();
-}
+// template<class MatrixType>
+// AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE
+// void actual_jac (const burn_t& state, MatrixType& jac)
+// {
+//     // initialize
+//     jac.zero();
+// }
 
 #endif
